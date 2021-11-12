@@ -6,6 +6,6 @@ jobs:
     steps:
     - id: result 
       uses: MichaelMelena/list-artifacts@v1
-    - uses: MichaelMelena/delete-artifacts@v1
+    - uses: MichaelMelena/remove-artifacts@v1
       with:
         artifacts: ${{ steps.result.outputs.artifacts }}
