@@ -1,0 +1,11 @@
+name: Let it bee!
+on: [workflow_dispatch]
+jobs:
+  create-artifact:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - uses: actions/upload-artifact@v2
+      with:
+      name: Bee Artifact
+      path: data/important_document.txt
