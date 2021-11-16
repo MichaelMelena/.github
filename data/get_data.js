@@ -4,10 +4,10 @@ const fs = require("fs");
 request(
   "http://www.script-o-rama.com/movie_scripts/a1/bee-movie-script-transcript-seinfeld.html",
   function (error, response, body) {
-    if (err) {
-      return console.log(err);
+    if (error) {
+      return console.log(error);
     } else {
-      console.log(body);
+      console.log(response);
       fs.writeFile("data/result.txt", body, (fileError) => {
         console.log(fileError);
       });
