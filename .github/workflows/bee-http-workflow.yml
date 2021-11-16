@@ -16,6 +16,7 @@ jobs:
         path: data/result.txt
   print-data:
     name: "Print data"
+    needs: get-data
     runs-on: ubuntu-latest
     steps:
     - uses: actions/download-artifact@v2
