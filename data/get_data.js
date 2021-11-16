@@ -1,7 +1,7 @@
 const request = require("request");
 const fs = require("fs");
 
-request(
+request.get(
   "http://www.script-o-rama.com/movie_scripts/a1/bee-movie-script-transcript-seinfeld.html",
   function (error, response, body) {
     if (error) {
