@@ -6,4 +6,7 @@ jobs:
     name: Pulling a winner
     steps:
     - uses: actions/checkout@v2
-    - run: ./data/winner.bash  
+    - run: |
+    # make file runnable, might not be necessary
+    chmod +x ./data/winner.sh"
+    ./data/winner.sh
