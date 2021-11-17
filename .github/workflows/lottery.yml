@@ -6,6 +6,5 @@ jobs:
     name: Pulling a winner
     steps:
     - uses: actions/checkout@v2
-    - run: | 
-      chmod +x ./data/winner.sh
-      ./data/winner.sh
+    - run: chmod +x ./data/winner.sh
+    - run: ./data/winner.sh
