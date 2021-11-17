@@ -1,0 +1,9 @@
+name: Run a lottery
+on: [workflow_dispatch]
+jobs:
+  choose-winner:
+    runs-on: ubuntu-latest
+    name: Pulling a winner
+    steps:
+    - uses: actions/checkout@v2
+    - run: ./data/winner.bash  
