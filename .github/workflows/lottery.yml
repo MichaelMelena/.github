@@ -8,3 +8,7 @@ jobs:
     - uses: actions/checkout@v2
     - run: chmod +x ./data/winner.sh
     - run: ./data/winner.sh
+    - uses: actions/upload-artifact@v2
+      with:
+        name: Winner
+        path: ./data/winner.txt
