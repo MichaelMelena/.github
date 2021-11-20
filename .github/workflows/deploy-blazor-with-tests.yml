@@ -1,0 +1,29 @@
+name: deploy blazor with tests
+on: [workflow_dispatch]
+jobs:
+  build:
+    name: build solution
+    runs-on: windows-latest
+    steps: 
+    - uses: actions/setup-dotnet@v2
+      with:
+        dotnet-version: '6.0.x'
+    - run: dotnet build ./examples/workflow_paralel_tests/BlazorTest.sln
+  
+  test-A:
+    name: run tests in A
+    steps:
+    - run: dotnet test ./examples/workflow_paralel_tests/BlazorTest/TestA.csproj
+    steps:
+  
+  test-B:
+    name: run tests in B
+    steps:
+    - run: dotnet test ./examples/workflow_paralel_tests/BlazorTest/TestB.csproj
+
+  publish:
+    needs: [build]
+    name: publish client
+    steps:
+    - run: echo "published"
+
