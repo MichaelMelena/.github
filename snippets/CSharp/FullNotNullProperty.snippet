@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>Full not null property</Title>
+            <Author>Michael Melena</Author>
+            <Shortcut>nnpropfull</Shortcut>
+        </Header>
+        <Snippet>
+			<Declarations>
+				<Literal>
+					<ID>type</ID>
+					<Default>string</Default>
+					<ToolTip>Property not null type</ToolTip>
+				</Literal>
+				<Literal>
+					<ID>name</ID>
+					<Default>Property</Default>
+					<ToolTip>Name of the public property</ToolTip>
+				</Literal>
+				<Literal>
+					<ID>field</ID>
+					<Default>field</Default>
+					<ToolTip>Name of the backing field</ToolTip>
+				</Literal>
+			</Declarations>
+			<Imports>
+				<Import>
+					<Namespace>System</Namespace>
+				</Import>
+			</Imports>
+            <Code Language="CSharp">
+                <![CDATA[
+				private $type$? $field$;
+                public $type$  $name$ 
+                {
+                    get => $field$!;
+                    set
+                    {
+                        ArgumentNullException.ThrowIfNull(value);
+                        $field$ = value;
+                    }
+                }
+                ]]>
+            </Code>
+          
+        
+        </Snippet>
+    </CodeSnippet>
+</CodeSnippets>
