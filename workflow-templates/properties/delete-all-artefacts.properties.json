@@ -1,5 +1,5 @@
 {
   "name": "Delete all artifacts workflow",
   "description" : "Workflow to clear artifacts from your repository",
-  "iconName": "icons/gear-icon"
+  "iconName": "./../icons/gear-icon"
 }
